@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_social_feed_app/core/routing/routes.dart';
-import 'package:minimal_social_feed_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:minimal_social_feed_app/features/login/presentation/screens/login_screen.dart';
 import 'package:minimal_social_feed_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:minimal_social_feed_app/features/home/presentation/home_screem.dart';
 
