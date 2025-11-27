@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimal_social_feed_app/core/helpers/extensions.dart';
 import 'package:minimal_social_feed_app/core/helpers/spacing.dart';
@@ -6,20 +7,14 @@ import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
 import 'package:minimal_social_feed_app/core/widgets/app_text_button.dart';
-import 'package:minimal_social_feed_app/core/widgets/app_text_form_field.dart';
 import 'package:minimal_social_feed_app/features/auth/presentation/widgets/text_footer.dart';
+import 'package:minimal_social_feed_app/features/login/data/models/login_request_body.dart';
+import 'package:minimal_social_feed_app/features/login/domain/cubit/login_cubit.dart';
+import 'package:minimal_social_feed_app/features/login/presentation/screens/widgets/email_and_passowrd.dart';
+import 'package:minimal_social_feed_app/features/login/presentation/screens/widgets/login_bloc_listener.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-TextEditingController controller = TextEditingController();
-
-class _LoginScreenState extends State<LoginScreen> {
-  bool isObscure = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,44 +33,14 @@ class _LoginScreenState extends State<LoginScreen> {
               verticalSpace(20.h),
 
               //Email field
-              Text("Email", style: TextStyles.font18Black600),
-              verticalSpace(10.h),
-
-              AppTextFormField(
-                hintText: 'Enter Your Email',
-                hintStyle: TextStyles.font14Black500,
-                inputTextStyle: TextStyles.font12bluegreykw600,
-                backgroundColor: Colors.white70,
-              ),
-              verticalSpace(20.h),
-              //password field
-              Text("Passowrd", style: TextStyles.font18Black600),
-              verticalSpace(10.h),
-              AppTextFormField(
-                hintText: 'Enter Your Passowrd',
-                hintStyle: TextStyles.font14Black500,
-                inputTextStyle: TextStyles.font12bluegreykw600,
-                backgroundColor: Colors.white70,
-                isObscureText: isObscure,
-                controller: controller,
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    isObscure ? Icons.visibility : Icons.visibility_off,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      isObscure = !isObscure;
-                    });
-                  },
-                ),
-              ),
+              EmailAndPassowrd(),
               //Register Button
               verticalSpace(80.h),
               AppTextButton(
                 buttonText: 'Log In',
                 textStyle: TextStyles.font20whitew600,
                 onPressed: () {
-                  context.pushReplacementNamed(Routes.homeScreen);
+                  validateThenDoLogin(context);
                 },
                 backgroundColor: ColorsManegar.mainBlue,
                 borderRadius: 30,
@@ -87,9 +52,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 nextPageName: Routes.registersScreen,
                 textSpan: 'Register',
               ),
+              LoginBlocListener(),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    context.read<LoginCubit>().emitLoginState(
+      LoginRequestBody(
+        email: context.read<LoginCubit>().emailcontroller.text,
+        password: context.read<LoginCubit>().passwordlcontroller.text,
       ),
     );
   }

@@ -10,7 +10,7 @@ import 'package:minimal_social_feed_app/core/widgets/app_text_form_field.dart';
 import 'package:minimal_social_feed_app/features/auth/presentation/widgets/text_footer.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({super.key});
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -40,6 +40,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Text("Username", style: TextStyles.font18Black600),
               verticalSpace(10.h),
               AppTextFormField(
+                validator: (p0) {},
+
                 hintText: 'Enter Your Name',
                 hintStyle: TextStyles.font14Black500,
                 inputTextStyle: TextStyles.font12bluegreykw600,
@@ -51,6 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               verticalSpace(10.h),
 
               AppTextFormField(
+                validator: (p0) {},
                 hintText: 'Enter Your Email',
                 hintStyle: TextStyles.font14Black500,
                 inputTextStyle: TextStyles.font12bluegreykw600,
@@ -61,6 +64,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Text("Passowrd", style: TextStyles.font18Black600),
               verticalSpace(10.h),
               AppTextFormField(
+                validator: (p0) {},
+
                 hintText: 'Enter Your Passowrd',
                 hintStyle: TextStyles.font14Black500,
                 inputTextStyle: TextStyles.font12bluegreykw600,

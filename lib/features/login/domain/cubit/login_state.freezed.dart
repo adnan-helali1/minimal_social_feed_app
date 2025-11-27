@@ -20,7 +20,7 @@ mixin _$LoginState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(T data) successed,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$LoginState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(T data)? successed,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$LoginState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(T data)? successed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -45,7 +45,7 @@ mixin _$LoginState<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Successed<T> value) successed,
     required TResult Function(Error<T> value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ mixin _$LoginState<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Successed<T> value)? successed,
     TResult? Function(Error<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ mixin _$LoginState<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Successed<T> value)? successed,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) =>
@@ -138,7 +138,7 @@ class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(T data) successed,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -149,7 +149,7 @@ class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(T data)? successed,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -160,7 +160,7 @@ class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(T data)? successed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -175,7 +175,7 @@ class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Successed<T> value) successed,
     required TResult Function(Error<T> value) error,
   }) {
     return initial(this);
@@ -186,7 +186,7 @@ class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Successed<T> value)? successed,
     TResult? Function(Error<T> value)? error,
   }) {
     return initial?.call(this);
@@ -197,7 +197,7 @@ class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Successed<T> value)? successed,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
@@ -261,7 +261,7 @@ class _$loadingImpl<T> with DiagnosticableTreeMixin implements loading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(T data) successed,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -272,7 +272,7 @@ class _$loadingImpl<T> with DiagnosticableTreeMixin implements loading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(T data)? successed,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -283,7 +283,7 @@ class _$loadingImpl<T> with DiagnosticableTreeMixin implements loading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(T data)? successed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -298,7 +298,7 @@ class _$loadingImpl<T> with DiagnosticableTreeMixin implements loading<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Successed<T> value) successed,
     required TResult Function(Error<T> value) error,
   }) {
     return loading(this);
@@ -309,7 +309,7 @@ class _$loadingImpl<T> with DiagnosticableTreeMixin implements loading<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Successed<T> value)? successed,
     TResult? Function(Error<T> value)? error,
   }) {
     return loading?.call(this);
@@ -320,7 +320,7 @@ class _$loadingImpl<T> with DiagnosticableTreeMixin implements loading<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Successed<T> value)? successed,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
@@ -336,20 +336,20 @@ abstract class loading<T> implements LoginState<T> {
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<T, $Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
-      __$$SuccessImplCopyWithImpl<T, $Res>;
+abstract class _$$SuccessedImplCopyWith<T, $Res> {
+  factory _$$SuccessedImplCopyWith(
+          _$SuccessedImpl<T> value, $Res Function(_$SuccessedImpl<T>) then) =
+      __$$SuccessedImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<T, $Res>
-    extends _$LoginStateCopyWithImpl<T, $Res, _$SuccessImpl<T>>
-    implements _$$SuccessImplCopyWith<T, $Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl<T> _value, $Res Function(_$SuccessImpl<T>) _then)
+class __$$SuccessedImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$SuccessedImpl<T>>
+    implements _$$SuccessedImplCopyWith<T, $Res> {
+  __$$SuccessedImplCopyWithImpl(
+      _$SuccessedImpl<T> _value, $Res Function(_$SuccessedImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of LoginState
@@ -359,7 +359,7 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$SuccessImpl<T>(
+    return _then(_$SuccessedImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -370,22 +370,22 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
-  const _$SuccessImpl(this.data);
+class _$SuccessedImpl<T> with DiagnosticableTreeMixin implements Successed<T> {
+  const _$SuccessedImpl(this.data);
 
   @override
   final T data;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoginState<$T>.success(data: $data)';
+    return 'LoginState<$T>.successed(data: $data)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LoginState<$T>.success'))
+      ..add(DiagnosticsProperty('type', 'LoginState<$T>.successed'))
       ..add(DiagnosticsProperty('data', data));
   }
 
@@ -393,7 +393,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl<T> &&
+            other is _$SuccessedImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -406,18 +406,18 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
-      __$$SuccessImplCopyWithImpl<T, _$SuccessImpl<T>>(this, _$identity);
+  _$$SuccessedImplCopyWith<T, _$SuccessedImpl<T>> get copyWith =>
+      __$$SuccessedImplCopyWithImpl<T, _$SuccessedImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(T data) successed,
     required TResult Function(String error) error,
   }) {
-    return success(data);
+    return successed(data);
   }
 
   @override
@@ -425,10 +425,10 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(T data)? successed,
     TResult? Function(String error)? error,
   }) {
-    return success?.call(data);
+    return successed?.call(data);
   }
 
   @override
@@ -436,12 +436,12 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(T data)? successed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (successed != null) {
+      return successed(data);
     }
     return orElse();
   }
@@ -451,10 +451,10 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Successed<T> value) successed,
     required TResult Function(Error<T> value) error,
   }) {
-    return success(this);
+    return successed(this);
   }
 
   @override
@@ -462,10 +462,10 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Successed<T> value)? successed,
     TResult? Function(Error<T> value)? error,
   }) {
-    return success?.call(this);
+    return successed?.call(this);
   }
 
   @override
@@ -473,26 +473,26 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Successed<T> value)? successed,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (successed != null) {
+      return successed(this);
     }
     return orElse();
   }
 }
 
-abstract class Success<T> implements LoginState<T> {
-  const factory Success(final T data) = _$SuccessImpl<T>;
+abstract class Successed<T> implements LoginState<T> {
+  const factory Successed(final T data) = _$SuccessedImpl<T>;
 
   T get data;
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+  _$$SuccessedImplCopyWith<T, _$SuccessedImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -574,7 +574,7 @@ class _$ErrorImpl<T> with DiagnosticableTreeMixin implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(T data) successed,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -585,7 +585,7 @@ class _$ErrorImpl<T> with DiagnosticableTreeMixin implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(T data)? successed,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -596,7 +596,7 @@ class _$ErrorImpl<T> with DiagnosticableTreeMixin implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(T data)? successed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -611,7 +611,7 @@ class _$ErrorImpl<T> with DiagnosticableTreeMixin implements Error<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Successed<T> value) successed,
     required TResult Function(Error<T> value) error,
   }) {
     return error(this);
@@ -622,7 +622,7 @@ class _$ErrorImpl<T> with DiagnosticableTreeMixin implements Error<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Successed<T> value)? successed,
     TResult? Function(Error<T> value)? error,
   }) {
     return error?.call(this);
@@ -633,7 +633,7 @@ class _$ErrorImpl<T> with DiagnosticableTreeMixin implements Error<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Successed<T> value)? successed,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
