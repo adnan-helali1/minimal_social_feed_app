@@ -12,39 +12,7 @@ class LoginBlocListener extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          loading: () {
-            showDialog(
-              barrierDismissible: false,
-              context: context,
-              builder: (_) => const Center(child: CircularProgressIndicator()),
-            );
-          },
-          successed: (data) {
-            Navigator.pop(context);
-            context.pushReplacementNamed(Routes.homeScreen);
-          },
-          error: (error) {
-            Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder:
-                  (_) => AlertDialog(
-                    title: const Text("Error"),
-                    content: Text(error),
-                  ),
-            );
-          },
-        );
-      },
-      builder: (context, state) => const SizedBox.shrink(),
-    );
-  }
-
-  /*
-     BlocListener<LoginCubit, LoginState>(
+    return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) => current != previous,
 
       listener: (context, state) {
@@ -90,6 +58,6 @@ class LoginBlocListener extends StatelessWidget {
               ),
             ],
           ),
-    )
-  */
+    );
+  }
 }

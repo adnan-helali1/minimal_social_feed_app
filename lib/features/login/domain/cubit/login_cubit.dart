@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:minimal_social_feed_app/core/networking/api_error_model.dart';
 import 'package:minimal_social_feed_app/features/login/data/repos/login_repo.dart';
 import 'package:minimal_social_feed_app/features/login/domain/cubit/login_state.dart';
 
@@ -28,22 +29,16 @@ class LoginCubit extends Cubit<LoginState> {
   //   );
   // }
   Future<void> emitLoginState(loginRequestBody) async {
-    print("🚀 دخلنا الكيوبيت");
-
     emit(const LoginState.loading());
 
     try {
       final response = await _loginRepo.login(loginRequestBody);
 
-      print("✅ وصل الرد من الريبو: $response");
-
       response.when(
         success: (data) {
-          print("✅ Success وصل");
           emit(LoginState.successed(data));
         },
         failure: (error) {
-          print("❌ Failure وصل");
           emit(
             LoginState.error(
               error: error.apiErrorModel.message ?? "Unknown error",
@@ -52,8 +47,7 @@ class LoginCubit extends Cubit<LoginState> {
         },
       );
     } catch (e) {
-      print("🔥 EXCEPTION: $e");
-      emit(const LoginState.error(error: "Exception happened"));
+      emit(const LoginState.error(error: "Exception happenedsss"));
     }
   }
 }
