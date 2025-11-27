@@ -40,6 +40,7 @@ class LoginScreen extends StatelessWidget {
                 buttonText: 'Log In',
                 textStyle: TextStyles.font20whitew600,
                 onPressed: () {
+                  print("🔥 LOGIN BUTTON CLICKED");
                   validateThenDoLogin(context);
                 },
                 backgroundColor: ColorsManegar.mainBlue,
