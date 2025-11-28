@@ -6,7 +6,6 @@ import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
 import 'package:minimal_social_feed_app/core/widgets/app_text_button.dart';
-import 'package:minimal_social_feed_app/features/register/data/models/register_request_body.dart';
 import 'package:minimal_social_feed_app/features/register/domain/cubit/register_cubit.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/widgets/register_bloc_listener.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/widgets/register_fields.dart';
@@ -51,12 +50,6 @@ class RegisterScreen extends StatelessWidget {
   }
 
   void validateThenDoRegister(BuildContext context) {
-    context.read<RegisterCubit>().emitRegisterState(
-      RegisterRequestBody(
-        username: context.read<RegisterCubit>().usernamecontroller.text,
-        email: context.read<RegisterCubit>().emailcontroller.text,
-        password: context.read<RegisterCubit>().passwordlcontroller.text,
-      ),
-    );
+    context.read<RegisterCubit>().emitRegisterState();
   }
 }
