@@ -12,14 +12,18 @@ class DioFactory {
 
     if (dio == null) {
       dio = Dio();
+
       dio!
         ..options.connectTimeout = timeOut
-        ..options.receiveTimeout = timeOut;
+        ..options.receiveTimeout = timeOut
+        ..options.validateStatus = (status) {
+          return status != null && status < 500;
+        };
+
       addDioInterceptor();
-      return dio!;
-    } else {
-      return dio!;
     }
+
+    return dio!;
   }
 
   static void addDioInterceptor() {

@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'package:minimal_social_feed_app/core/networking/api_error_model.dart';
 import 'package:minimal_social_feed_app/features/login/data/repos/login_repo.dart';
 import 'package:minimal_social_feed_app/features/login/domain/cubit/login_state.dart';
 
@@ -39,11 +38,7 @@ class LoginCubit extends Cubit<LoginState> {
           emit(LoginState.successed(data));
         },
         failure: (error) {
-          emit(
-            LoginState.error(
-              error: error.apiErrorModel.message ?? "Unknown error",
-            ),
-          );
+          emit(LoginState.error(error: error.apiErrorModel.message));
         },
       );
     } catch (e) {
