@@ -7,7 +7,7 @@ class FeedCubit extends Cubit<FeedState> {
   final FeedRepo _feedRepo;
   FeedCubit(this._feedRepo) : super(FeedState.initial());
 
-  void getfeed() async {
+  void getfeed({required int page}) async {
     emit(const FeedState.feedloading());
     final response = await _feedRepo.getFeedData();
     response.when(

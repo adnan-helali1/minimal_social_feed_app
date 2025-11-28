@@ -1,25 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_social_feed_app/features/feed/presentation/1.dart';
-import 'package:minimal_social_feed_app/features/feed/presentation/2.dart';
+import 'package:minimal_social_feed_app/features/feed/data/models/feed_response.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/post_card.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/post_model.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/widgets/leest_of_posts.dart';
 
-class FeedScreen extends StatefulWidget {
-  const FeedScreen({super.key});
+class Listviewstate extends StatefulWidget {
+  final List<Posts> dataPostList;
+
+  const Listviewstate({
+    super.key,
+    required this.dataPostList,
+    required ScrollController controller,
+    required hasMore,
+  });
 
   @override
-  State<FeedScreen> createState() => _FeedScreenState();
+  State<Listviewstate> createState() =>
+  // ignore: no_logic_in_create_state
+  _ListviewstateState(dataPostList: List.empty());
 }
 
-class _FeedScreenState extends State<FeedScreen> {
+class _ListviewstateState extends State<Listviewstate> {
   final ScrollController _scrollController = ScrollController();
+  final List<Posts> dataPostList;
 
   List<PostModel> posts = [];
   bool isLoading = false;
   int page = 1;
-  bool hasMore = true; // لما ما يبقى بيانات
+  bool hasMore = true;
+
+  _ListviewstateState({required this.dataPostList});
+
+  //_KistviewState({required this.DataPostList}); // لما ما يبقى بيانات
 
   @override
   void initState() {
+    super.initState();
     scrollController();
   }
 
@@ -66,36 +82,16 @@ class _FeedScreenState extends State<FeedScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Feed")),
-      body: ListView.builder(
-        controller: _scrollController,
-        itemCount: posts.length + 1,
-        itemBuilder: (context, index) {
-          // عرض بوست
-          if (index < posts.length) {
-            return PostCard(post: posts[index]);
-          }
+    return ListView.builder(
+      controller: _scrollController,
+      itemCount: posts.length + 1,
+      itemBuilder: (context, index) {
+        // عرض بوست
+        PostCard(post: posts[index], postsData: dataPostList[index]);
 
-          // اللودر
-          if (isLoading) {
-            return const Padding(
-              padding: EdgeInsets.all(16),
-              child: Center(child: CircularProgressIndicator()),
-            );
-          }
-
-          // ما في بيانات أكثر
-          if (!hasMore) {
-            return const Padding(
-              padding: EdgeInsets.all(20),
-              child: Center(child: Text('No more posts')),
-            );
-          }
-
-          return const SizedBox();
-        },
-      ),
+        return const SizedBox();
+      },
     );
+    ;
   }
 }

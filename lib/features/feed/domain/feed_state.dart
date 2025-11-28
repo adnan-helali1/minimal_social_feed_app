@@ -7,7 +7,7 @@ part 'feed_state.freezed.dart';
 @freezed
 class FeedState with _$FeedState {
   const factory FeedState.initial() = _Initial;
-  const factory FeedState.feedloading() = Loading;
+  const factory FeedState.feedloading() = FeedLoading;
   const factory FeedState.feedSuccess(FeedResponse feedResponse) = FeedSuccess;
-  const factory FeedState.feederror(ErrorHandler errorHandler) = Error;
+  const factory FeedState.feederror(ErrorHandler errorHandler) = FeedError;
 }

@@ -1,4 +1,4 @@
-import 'package:minimal_social_feed_app/features/feed/presentation/1.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/post_model.dart';
 
 List<PostModel> fakePosts(int page) {
   if (page > 5) return []; // بعد الصفحة 5 ما في بيانات
