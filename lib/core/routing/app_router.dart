@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_social_feed_app/core/di/dependency_injection.dart';
 import 'package:minimal_social_feed_app/core/routing/routes.dart';
-import 'package:minimal_social_feed_app/features/feed/domain/feed_cubit.dart';
+import 'package:minimal_social_feed_app/features/feed/home_screen.dart';
 import 'package:minimal_social_feed_app/features/login/domain/cubit/login_cubit.dart';
 import 'package:minimal_social_feed_app/features/login/presentation/screens/login_screen.dart';
 import 'package:minimal_social_feed_app/features/register/domain/cubit/register_cubit.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/screens/register_screen.dart';
-import 'package:minimal_social_feed_app/features/feed/presentation/home_screem.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
@@ -32,8 +31,8 @@ class AppRouter {
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
-                create: (context) => FeedCubit(getit()),
-                child: HomeScreem(),
+                create: (context) => LoginCubit(getit()),
+                child: const HomeScreen(),
               ),
         );
 

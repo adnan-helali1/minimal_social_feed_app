@@ -2,6 +2,7 @@ class ApiConstans {
   static const String apiBaseUrl = "http://161.97.64.130:8081/api";
   static const String login = "/login";
   static const String register = "/register";
+  static const String feed = "/posts";
 }
 
 class ApiErrors {

@@ -18,6 +18,4 @@ abstract class ApiService {
   Future<RegisterResponse> register(
     @Body() RegisterRequestBody registerRequestBody,
   );
-
-  getFeed(int page) {}
 }
