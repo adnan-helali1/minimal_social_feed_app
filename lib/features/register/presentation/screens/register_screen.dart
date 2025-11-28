@@ -6,14 +6,14 @@ import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
 import 'package:minimal_social_feed_app/core/widgets/app_text_button.dart';
-import 'package:minimal_social_feed_app/features/login/presentation/screens/widgets/login_bloc_listener.dart';
+import 'package:minimal_social_feed_app/features/register/data/models/register_request_body.dart';
+import 'package:minimal_social_feed_app/features/register/domain/cubit/register_cubit.dart';
+import 'package:minimal_social_feed_app/features/register/presentation/widgets/register_bloc_listener.dart';
+import 'package:minimal_social_feed_app/features/register/presentation/widgets/register_fields.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/widgets/text_footer.dart';
-import 'package:minimal_social_feed_app/features/login/data/models/login_request_body.dart';
-import 'package:minimal_social_feed_app/features/login/domain/cubit/login_cubit.dart';
-import 'package:minimal_social_feed_app/features/login/presentation/screens/widgets/email_and_passowrd.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +23,17 @@ class LoginScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 22),
           child: ListView(
+            //   mainAxisAlignment: MainAxisAlignment.start,
             children: [
               verticalSpace(20.h),
-              Align(
-                alignment: Alignment.center,
-                child: Text('Log In ', style: TextStyles.font24BmainBlueBold),
-              ),
-              verticalSpace(20.h),
-
-              //Email field
-              EmailAndPassowrd(),
+              RegisterFields(),
               //Register Button
-              verticalSpace(80.h),
+              verticalSpace(50.h),
               AppTextButton(
-                buttonText: 'Log In',
+                buttonText: 'Register',
                 textStyle: TextStyles.font20whitew600,
                 onPressed: () {
-                  validateThenDoLogin(context);
+                  validateThenDoRegister(context);
                 },
                 backgroundColor: ColorsManegar.mainBlue,
                 borderRadius: 30,
@@ -47,11 +41,8 @@ class LoginScreen extends StatelessWidget {
               ),
               //Already have an account
               verticalSpace(20.h),
-              TextFooter(
-                nextPageName: Routes.registersScreen,
-                textSpan: 'Register',
-              ),
-              LoginBlocListener(),
+              TextFooter(nextPageName: Routes.logInScreen, textSpan: 'Login'),
+              RegisterBlocListener(),
             ],
           ),
         ),
@@ -59,11 +50,12 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void validateThenDoLogin(BuildContext context) {
-    context.read<LoginCubit>().emitLoginState(
-      LoginRequestBody(
-        email: context.read<LoginCubit>().emailcontroller.text,
-        password: context.read<LoginCubit>().passwordlcontroller.text,
+  void validateThenDoRegister(BuildContext context) {
+    context.read<RegisterCubit>().emitRegisterState(
+      RegisterRequestBody(
+        username: context.read<RegisterCubit>().usernamecontroller.text,
+        email: context.read<RegisterCubit>().emailcontroller.text,
+        password: context.read<RegisterCubit>().passwordlcontroller.text,
       ),
     );
   }
