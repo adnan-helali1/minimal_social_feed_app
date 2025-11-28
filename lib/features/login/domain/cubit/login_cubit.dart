@@ -9,24 +9,6 @@ class LoginCubit extends Cubit<LoginState> {
 
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordlcontroller = TextEditingController();
-
-  // void emitLoginState(loginRequestBody) async {
-  //   emit(const LoginState.loading());
-  //   final response = await _loginRepo.login(loginRequestBody);
-  //   print("✅ API RESULT:ssssssssssssssssssaaaaaaaaaaaas $response");
-
-  //   response.when(
-  //     success: (loginResponse) {
-  //       emit(LoginState.successed(loginResponse));
-  //       print("✅ API RESULT:ssssssssssssssssssaaaaaaaaaaaas $response");
-  //     },
-  //     failure: (error) {
-  //       print("✅ API RESULT:ssssssssssssssssssaaaaaaaaaaaas $response");
-
-  //       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
-  //     },
-  //   );
-  // }
   Future<void> emitLoginState(loginRequestBody) async {
     emit(const LoginState.loading());
 
