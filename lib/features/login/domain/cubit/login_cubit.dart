@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:minimal_social_feed_app/features/login/data/models/login_request_body.dart';
 import 'package:minimal_social_feed_app/features/login/data/repos/login_repo.dart';
 import 'package:minimal_social_feed_app/features/login/domain/cubit/login_state.dart';
 
@@ -9,11 +10,16 @@ class LoginCubit extends Cubit<LoginState> {
 
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordlcontroller = TextEditingController();
-  Future<void> emitLoginState(loginRequestBody) async {
+  Future<void> emitLoginState() async {
     emit(const LoginState.loading());
 
     try {
-      final response = await _loginRepo.login(loginRequestBody);
+      final response = await _loginRepo.login(
+        LoginRequestBody(
+          email: emailcontroller.text,
+          password: passwordlcontroller.text,
+        ),
+      );
 
       response.when(
         success: (data) {

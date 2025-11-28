@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:minimal_social_feed_app/features/register/data/models/register_request_body.dart';
 import 'package:minimal_social_feed_app/features/register/data/repos/register_repo.dart';
 import 'package:minimal_social_feed_app/features/register/domain/cubit/register_state.dart';
 
@@ -11,11 +12,17 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController passwordlcontroller = TextEditingController();
   TextEditingController usernamecontroller = TextEditingController();
 
-  Future<void> emitRegisterState(registerRequestBody) async {
+  Future<void> emitRegisterState() async {
     emit(const RegisterState.loading());
 
     try {
-      final response = await _registerRepo.register(registerRequestBody);
+      final response = await _registerRepo.register(
+        RegisterRequestBody(
+          username: usernamecontroller.text,
+          email: emailcontroller.text,
+          password: passwordlcontroller.text,
+        ),
+      );
 
       response.when(
         success: (data) {
