@@ -43,8 +43,8 @@ dependencies:
   # for dependency injection
   get_it: ^7.6.4
   # Automatically generate code for converting to and from JSON by annotating Dart classes
-  json_serializable: ^6.7.1
-  json_annotation: ^4.8.1
+  json_serializable: ^6.9.0
+  json_annotation: ^4.9.0
   # Networking
   dio: ^5.3.3
   retrofit: ^4.0.3
@@ -61,6 +61,7 @@ dependencies:
   file_picker: ^10.3.7 
   # for Option, Either, State, etc functional programming types
   dartz: ^0.10.1
+  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_test:
