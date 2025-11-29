@@ -5,7 +5,9 @@ import 'package:minimal_social_feed_app/features/feed/logic/feed_state.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/widgets/huo_feed_card.dart';
 
 class BlocBuilderFeed extends StatelessWidget {
-  const BlocBuilderFeed({super.key});
+  final ScrollController scrollController;
+
+  const BlocBuilderFeed({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -13,23 +15,30 @@ class BlocBuilderFeed extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           feedloading: () => const Center(child: CircularProgressIndicator()),
-          feedSuccess: (feedResponse) {
-            final posts = feedResponse.posts ?? [];
+
+          feedSuccess: (posts, currentPage, lastPage, isLoadingMore) {
             return ListView.builder(
-              padding: const EdgeInsets.only(bottom: 100),
-              itemCount: posts.length,
+              controller: scrollController,
+              itemCount: posts.length + 1,
               itemBuilder: (context, index) {
-                return PostCard(post: posts[index]);
+                if (index < posts.length) {
+                  return PostCard(post: posts[index]);
+                }
+
+                return isLoadingMore
+                    ? const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Center(child: CircularProgressIndicator()),
+                    )
+                    : const SizedBox.shrink();
               },
             );
           },
+
           feederror:
-              (errorHandler) => Center(
-                child: Text(
-                  errorHandler.apiErrorModel.message,
-                  style: const TextStyle(color: Colors.red),
-                ),
-              ),
+              (errorHandler) =>
+                  Center(child: Text(errorHandler.apiErrorModel.message)),
+
           orElse: () => const SizedBox(),
         );
       },

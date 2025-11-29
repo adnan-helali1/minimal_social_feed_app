@@ -20,7 +20,9 @@ mixin _$FeedState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() feedloading,
-    required TResult Function(FeedResponseModel feedResponse) feedSuccess,
+    required TResult Function(
+            List<Post> posts, int currentPage, int lastPage, bool isLoadingMore)
+        feedSuccess,
     required TResult Function(ErrorHandler errorHandler) feederror,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +30,9 @@ mixin _$FeedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? feedloading,
-    TResult? Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult? Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult? Function(ErrorHandler errorHandler)? feederror,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +40,9 @@ mixin _$FeedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? feedloading,
-    TResult Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult Function(ErrorHandler errorHandler)? feederror,
     required TResult orElse(),
   }) =>
@@ -44,25 +50,25 @@ mixin _$FeedState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(FeedLoading value) feedloading,
-    required TResult Function(FeedSuccess value) feedSuccess,
-    required TResult Function(FeedError value) feederror,
+    required TResult Function(_FeedLoading value) feedloading,
+    required TResult Function(_FeedSuccess value) feedSuccess,
+    required TResult Function(_FeedError value) feederror,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(FeedLoading value)? feedloading,
-    TResult? Function(FeedSuccess value)? feedSuccess,
-    TResult? Function(FeedError value)? feederror,
+    TResult? Function(_FeedLoading value)? feedloading,
+    TResult? Function(_FeedSuccess value)? feedSuccess,
+    TResult? Function(_FeedError value)? feederror,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(FeedLoading value)? feedloading,
-    TResult Function(FeedSuccess value)? feedSuccess,
-    TResult Function(FeedError value)? feederror,
+    TResult Function(_FeedLoading value)? feedloading,
+    TResult Function(_FeedSuccess value)? feedSuccess,
+    TResult Function(_FeedError value)? feederror,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,7 +137,9 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() feedloading,
-    required TResult Function(FeedResponseModel feedResponse) feedSuccess,
+    required TResult Function(
+            List<Post> posts, int currentPage, int lastPage, bool isLoadingMore)
+        feedSuccess,
     required TResult Function(ErrorHandler errorHandler) feederror,
   }) {
     return initial();
@@ -142,7 +150,9 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? feedloading,
-    TResult? Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult? Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult? Function(ErrorHandler errorHandler)? feederror,
   }) {
     return initial?.call();
@@ -153,7 +163,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? feedloading,
-    TResult Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult Function(ErrorHandler errorHandler)? feederror,
     required TResult orElse(),
   }) {
@@ -167,9 +179,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(FeedLoading value) feedloading,
-    required TResult Function(FeedSuccess value) feedSuccess,
-    required TResult Function(FeedError value) feederror,
+    required TResult Function(_FeedLoading value) feedloading,
+    required TResult Function(_FeedSuccess value) feedSuccess,
+    required TResult Function(_FeedError value) feederror,
   }) {
     return initial(this);
   }
@@ -178,9 +190,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(FeedLoading value)? feedloading,
-    TResult? Function(FeedSuccess value)? feedSuccess,
-    TResult? Function(FeedError value)? feederror,
+    TResult? Function(_FeedLoading value)? feedloading,
+    TResult? Function(_FeedSuccess value)? feedSuccess,
+    TResult? Function(_FeedError value)? feederror,
   }) {
     return initial?.call(this);
   }
@@ -189,9 +201,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(FeedLoading value)? feedloading,
-    TResult Function(FeedSuccess value)? feedSuccess,
-    TResult Function(FeedError value)? feederror,
+    TResult Function(_FeedLoading value)? feedloading,
+    TResult Function(_FeedSuccess value)? feedSuccess,
+    TResult Function(_FeedError value)? feederror,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -226,7 +238,7 @@ class __$$FeedLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FeedLoadingImpl implements FeedLoading {
+class _$FeedLoadingImpl implements _FeedLoading {
   const _$FeedLoadingImpl();
 
   @override
@@ -248,7 +260,9 @@ class _$FeedLoadingImpl implements FeedLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() feedloading,
-    required TResult Function(FeedResponseModel feedResponse) feedSuccess,
+    required TResult Function(
+            List<Post> posts, int currentPage, int lastPage, bool isLoadingMore)
+        feedSuccess,
     required TResult Function(ErrorHandler errorHandler) feederror,
   }) {
     return feedloading();
@@ -259,7 +273,9 @@ class _$FeedLoadingImpl implements FeedLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? feedloading,
-    TResult? Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult? Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult? Function(ErrorHandler errorHandler)? feederror,
   }) {
     return feedloading?.call();
@@ -270,7 +286,9 @@ class _$FeedLoadingImpl implements FeedLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? feedloading,
-    TResult Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult Function(ErrorHandler errorHandler)? feederror,
     required TResult orElse(),
   }) {
@@ -284,9 +302,9 @@ class _$FeedLoadingImpl implements FeedLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(FeedLoading value) feedloading,
-    required TResult Function(FeedSuccess value) feedSuccess,
-    required TResult Function(FeedError value) feederror,
+    required TResult Function(_FeedLoading value) feedloading,
+    required TResult Function(_FeedSuccess value) feedSuccess,
+    required TResult Function(_FeedError value) feederror,
   }) {
     return feedloading(this);
   }
@@ -295,9 +313,9 @@ class _$FeedLoadingImpl implements FeedLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(FeedLoading value)? feedloading,
-    TResult? Function(FeedSuccess value)? feedSuccess,
-    TResult? Function(FeedError value)? feederror,
+    TResult? Function(_FeedLoading value)? feedloading,
+    TResult? Function(_FeedSuccess value)? feedSuccess,
+    TResult? Function(_FeedError value)? feederror,
   }) {
     return feedloading?.call(this);
   }
@@ -306,9 +324,9 @@ class _$FeedLoadingImpl implements FeedLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(FeedLoading value)? feedloading,
-    TResult Function(FeedSuccess value)? feedSuccess,
-    TResult Function(FeedError value)? feederror,
+    TResult Function(_FeedLoading value)? feedloading,
+    TResult Function(_FeedSuccess value)? feedSuccess,
+    TResult Function(_FeedError value)? feederror,
     required TResult orElse(),
   }) {
     if (feedloading != null) {
@@ -318,8 +336,8 @@ class _$FeedLoadingImpl implements FeedLoading {
   }
 }
 
-abstract class FeedLoading implements FeedState {
-  const factory FeedLoading() = _$FeedLoadingImpl;
+abstract class _FeedLoading implements FeedState {
+  const factory _FeedLoading() = _$FeedLoadingImpl;
 }
 
 /// @nodoc
@@ -328,7 +346,8 @@ abstract class _$$FeedSuccessImplCopyWith<$Res> {
           _$FeedSuccessImpl value, $Res Function(_$FeedSuccessImpl) then) =
       __$$FeedSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({FeedResponseModel feedResponse});
+  $Res call(
+      {List<Post> posts, int currentPage, int lastPage, bool isLoadingMore});
 }
 
 /// @nodoc
@@ -344,28 +363,60 @@ class __$$FeedSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? feedResponse = null,
+    Object? posts = null,
+    Object? currentPage = null,
+    Object? lastPage = null,
+    Object? isLoadingMore = null,
   }) {
     return _then(_$FeedSuccessImpl(
-      null == feedResponse
-          ? _value.feedResponse
-          : feedResponse // ignore: cast_nullable_to_non_nullable
-              as FeedResponseModel,
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<Post>,
+      currentPage: null == currentPage
+          ? _value.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      lastPage: null == lastPage
+          ? _value.lastPage
+          : lastPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      isLoadingMore: null == isLoadingMore
+          ? _value.isLoadingMore
+          : isLoadingMore // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$FeedSuccessImpl implements FeedSuccess {
-  const _$FeedSuccessImpl(this.feedResponse);
+class _$FeedSuccessImpl implements _FeedSuccess {
+  const _$FeedSuccessImpl(
+      {required final List<Post> posts,
+      required this.currentPage,
+      required this.lastPage,
+      required this.isLoadingMore})
+      : _posts = posts;
+
+  final List<Post> _posts;
+  @override
+  List<Post> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
 
   @override
-  final FeedResponseModel feedResponse;
+  final int currentPage;
+  @override
+  final int lastPage;
+  @override
+  final bool isLoadingMore;
 
   @override
   String toString() {
-    return 'FeedState.feedSuccess(feedResponse: $feedResponse)';
+    return 'FeedState.feedSuccess(posts: $posts, currentPage: $currentPage, lastPage: $lastPage, isLoadingMore: $isLoadingMore)';
   }
 
   @override
@@ -373,12 +424,22 @@ class _$FeedSuccessImpl implements FeedSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FeedSuccessImpl &&
-            (identical(other.feedResponse, feedResponse) ||
-                other.feedResponse == feedResponse));
+            const DeepCollectionEquality().equals(other._posts, _posts) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
+            (identical(other.lastPage, lastPage) ||
+                other.lastPage == lastPage) &&
+            (identical(other.isLoadingMore, isLoadingMore) ||
+                other.isLoadingMore == isLoadingMore));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, feedResponse);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_posts),
+      currentPage,
+      lastPage,
+      isLoadingMore);
 
   /// Create a copy of FeedState
   /// with the given fields replaced by the non-null parameter values.
@@ -393,10 +454,12 @@ class _$FeedSuccessImpl implements FeedSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() feedloading,
-    required TResult Function(FeedResponseModel feedResponse) feedSuccess,
+    required TResult Function(
+            List<Post> posts, int currentPage, int lastPage, bool isLoadingMore)
+        feedSuccess,
     required TResult Function(ErrorHandler errorHandler) feederror,
   }) {
-    return feedSuccess(feedResponse);
+    return feedSuccess(posts, currentPage, lastPage, isLoadingMore);
   }
 
   @override
@@ -404,10 +467,12 @@ class _$FeedSuccessImpl implements FeedSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? feedloading,
-    TResult? Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult? Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult? Function(ErrorHandler errorHandler)? feederror,
   }) {
-    return feedSuccess?.call(feedResponse);
+    return feedSuccess?.call(posts, currentPage, lastPage, isLoadingMore);
   }
 
   @override
@@ -415,12 +480,14 @@ class _$FeedSuccessImpl implements FeedSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? feedloading,
-    TResult Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult Function(ErrorHandler errorHandler)? feederror,
     required TResult orElse(),
   }) {
     if (feedSuccess != null) {
-      return feedSuccess(feedResponse);
+      return feedSuccess(posts, currentPage, lastPage, isLoadingMore);
     }
     return orElse();
   }
@@ -429,9 +496,9 @@ class _$FeedSuccessImpl implements FeedSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(FeedLoading value) feedloading,
-    required TResult Function(FeedSuccess value) feedSuccess,
-    required TResult Function(FeedError value) feederror,
+    required TResult Function(_FeedLoading value) feedloading,
+    required TResult Function(_FeedSuccess value) feedSuccess,
+    required TResult Function(_FeedError value) feederror,
   }) {
     return feedSuccess(this);
   }
@@ -440,9 +507,9 @@ class _$FeedSuccessImpl implements FeedSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(FeedLoading value)? feedloading,
-    TResult? Function(FeedSuccess value)? feedSuccess,
-    TResult? Function(FeedError value)? feederror,
+    TResult? Function(_FeedLoading value)? feedloading,
+    TResult? Function(_FeedSuccess value)? feedSuccess,
+    TResult? Function(_FeedError value)? feederror,
   }) {
     return feedSuccess?.call(this);
   }
@@ -451,9 +518,9 @@ class _$FeedSuccessImpl implements FeedSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(FeedLoading value)? feedloading,
-    TResult Function(FeedSuccess value)? feedSuccess,
-    TResult Function(FeedError value)? feederror,
+    TResult Function(_FeedLoading value)? feedloading,
+    TResult Function(_FeedSuccess value)? feedSuccess,
+    TResult Function(_FeedError value)? feederror,
     required TResult orElse(),
   }) {
     if (feedSuccess != null) {
@@ -463,11 +530,17 @@ class _$FeedSuccessImpl implements FeedSuccess {
   }
 }
 
-abstract class FeedSuccess implements FeedState {
-  const factory FeedSuccess(final FeedResponseModel feedResponse) =
-      _$FeedSuccessImpl;
+abstract class _FeedSuccess implements FeedState {
+  const factory _FeedSuccess(
+      {required final List<Post> posts,
+      required final int currentPage,
+      required final int lastPage,
+      required final bool isLoadingMore}) = _$FeedSuccessImpl;
 
-  FeedResponseModel get feedResponse;
+  List<Post> get posts;
+  int get currentPage;
+  int get lastPage;
+  bool get isLoadingMore;
 
   /// Create a copy of FeedState
   /// with the given fields replaced by the non-null parameter values.
@@ -511,7 +584,7 @@ class __$$FeedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FeedErrorImpl implements FeedError {
+class _$FeedErrorImpl implements _FeedError {
   const _$FeedErrorImpl(this.errorHandler);
 
   @override
@@ -547,7 +620,9 @@ class _$FeedErrorImpl implements FeedError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() feedloading,
-    required TResult Function(FeedResponseModel feedResponse) feedSuccess,
+    required TResult Function(
+            List<Post> posts, int currentPage, int lastPage, bool isLoadingMore)
+        feedSuccess,
     required TResult Function(ErrorHandler errorHandler) feederror,
   }) {
     return feederror(errorHandler);
@@ -558,7 +633,9 @@ class _$FeedErrorImpl implements FeedError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? feedloading,
-    TResult? Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult? Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult? Function(ErrorHandler errorHandler)? feederror,
   }) {
     return feederror?.call(errorHandler);
@@ -569,7 +646,9 @@ class _$FeedErrorImpl implements FeedError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? feedloading,
-    TResult Function(FeedResponseModel feedResponse)? feedSuccess,
+    TResult Function(List<Post> posts, int currentPage, int lastPage,
+            bool isLoadingMore)?
+        feedSuccess,
     TResult Function(ErrorHandler errorHandler)? feederror,
     required TResult orElse(),
   }) {
@@ -583,9 +662,9 @@ class _$FeedErrorImpl implements FeedError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(FeedLoading value) feedloading,
-    required TResult Function(FeedSuccess value) feedSuccess,
-    required TResult Function(FeedError value) feederror,
+    required TResult Function(_FeedLoading value) feedloading,
+    required TResult Function(_FeedSuccess value) feedSuccess,
+    required TResult Function(_FeedError value) feederror,
   }) {
     return feederror(this);
   }
@@ -594,9 +673,9 @@ class _$FeedErrorImpl implements FeedError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(FeedLoading value)? feedloading,
-    TResult? Function(FeedSuccess value)? feedSuccess,
-    TResult? Function(FeedError value)? feederror,
+    TResult? Function(_FeedLoading value)? feedloading,
+    TResult? Function(_FeedSuccess value)? feedSuccess,
+    TResult? Function(_FeedError value)? feederror,
   }) {
     return feederror?.call(this);
   }
@@ -605,9 +684,9 @@ class _$FeedErrorImpl implements FeedError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(FeedLoading value)? feedloading,
-    TResult Function(FeedSuccess value)? feedSuccess,
-    TResult Function(FeedError value)? feederror,
+    TResult Function(_FeedLoading value)? feedloading,
+    TResult Function(_FeedSuccess value)? feedSuccess,
+    TResult Function(_FeedError value)? feederror,
     required TResult orElse(),
   }) {
     if (feederror != null) {
@@ -617,8 +696,8 @@ class _$FeedErrorImpl implements FeedError {
   }
 }
 
-abstract class FeedError implements FeedState {
-  const factory FeedError(final ErrorHandler errorHandler) = _$FeedErrorImpl;
+abstract class _FeedError implements FeedState {
+  const factory _FeedError(final ErrorHandler errorHandler) = _$FeedErrorImpl;
 
   ErrorHandler get errorHandler;
 

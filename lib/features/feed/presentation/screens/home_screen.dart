@@ -11,20 +11,29 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
 
-    // اطلب من الـ cubit يجيب البوستات
     final feedCubit = BlocProvider.of<FeedCubit>(context);
     feedCubit.getfeed(page: 1);
+
+    _scrollController.addListener(() {
+      // when it going to finish
+      if (_scrollController.position.pixels >=
+          _scrollController.position.maxScrollExtent - 400) {
+        feedCubit.loadMore();
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Feed')),
-      body: BlocBuilderFeed(),
+      body: BlocBuilderFeed(scrollController: _scrollController),
     );
   }
 }
