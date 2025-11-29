@@ -25,6 +25,6 @@ abstract class ApiService {
 
   // ================== POSTS ==================
 
-  @GET(ApiConstans.feed)
-  Future<FeedResponseModel> getPosts();
+  @GET("${ApiConstans.feed}?page={page}")
+  Future<FeedResponseModel> getPosts(@Path("page") int page);
 }

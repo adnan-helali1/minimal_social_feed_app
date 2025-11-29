@@ -7,9 +7,10 @@ class FeedRepo {
   final ApiService _apiService;
 
   FeedRepo(this._apiService);
-  Future<ApiResult<FeedResponseModel>> feedRepo() async {
+
+  Future<ApiResult<FeedResponseModel>> feedRepo({required int page}) async {
     try {
-      final response = await _apiService.getPosts();
+      final response = await _apiService.getPosts(page);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));
