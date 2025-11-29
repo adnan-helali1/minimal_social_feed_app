@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:minimal_social_feed_app/features/register/data/models/register_request_body.dart';
 import 'package:minimal_social_feed_app/features/register/data/repos/register_repo.dart';
-import 'package:minimal_social_feed_app/features/register/domain/cubit/register_state.dart';
+import 'package:minimal_social_feed_app/features/register/logic/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   final RegisterRepo _registerRepo;

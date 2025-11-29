@@ -6,10 +6,10 @@ import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
 import 'package:minimal_social_feed_app/core/widgets/app_text_button.dart';
-import 'package:minimal_social_feed_app/features/login/presentation/screens/widgets/login_bloc_listener.dart';
+import 'package:minimal_social_feed_app/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/widgets/text_footer.dart';
-import 'package:minimal_social_feed_app/features/login/domain/cubit/login_cubit.dart';
-import 'package:minimal_social_feed_app/features/login/presentation/screens/widgets/email_and_passowrd.dart';
+import 'package:minimal_social_feed_app/features/login/logic/login_cubit.dart';
+import 'package:minimal_social_feed_app/features/login/presentation/widgets/email_and_passowrd.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

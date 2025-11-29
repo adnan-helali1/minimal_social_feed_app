@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimal_social_feed_app/core/helpers/spacing.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
 import 'package:minimal_social_feed_app/core/widgets/app_text_form_field.dart';
-import 'package:minimal_social_feed_app/features/login/domain/cubit/login_cubit.dart';
+import 'package:minimal_social_feed_app/features/login/logic/login_cubit.dart';
 
 class EmailAndPassowrd extends StatefulWidget {
   const EmailAndPassowrd({super.key});

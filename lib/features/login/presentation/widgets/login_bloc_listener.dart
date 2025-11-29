@@ -4,8 +4,8 @@ import 'package:minimal_social_feed_app/core/helpers/extensions.dart';
 import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
-import 'package:minimal_social_feed_app/features/login/domain/cubit/login_cubit.dart';
-import 'package:minimal_social_feed_app/features/login/domain/cubit/login_state.dart';
+import 'package:minimal_social_feed_app/features/login/logic/login_cubit.dart';
+import 'package:minimal_social_feed_app/features/login/logic/login_state.dart';
 
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
