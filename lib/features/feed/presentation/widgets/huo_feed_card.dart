@@ -22,7 +22,7 @@ class PostCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// USER NAME
+            /// USER NAME data
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
