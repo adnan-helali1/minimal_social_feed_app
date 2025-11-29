@@ -49,17 +49,17 @@ Map<String, dynamic> _$UsersToJson(Users instance) => <String, dynamic>{
     };
 
 Tokens _$TokensFromJson(Map<String, dynamic> json) => Tokens(
-      tokenType: json['tokenType'] as String?,
-      accessToken: json['accessToken'] as String?,
-      accessTokenExpiresAt: json['accessTokenExpiresAt'] as String?,
-      refreshToken: json['refreshToken'] as String?,
-      refreshTokenExpireAt: json['refreshTokenExpireAt'] as String?,
+      tokenType: json['token_type'] as String?,
+      accessToken: json['access_token'] as String?,
+      accessTokenExpiresAt: json['access_token_expires_at'] as String?,
+      refreshToken: json['refresh_token'] as String?,
+      refreshTokenExpireAt: json['refresh_token_expires_at'] as String?,
     );
 
 Map<String, dynamic> _$TokensToJson(Tokens instance) => <String, dynamic>{
-      'tokenType': instance.tokenType,
-      'accessToken': instance.accessToken,
-      'accessTokenExpiresAt': instance.accessTokenExpiresAt,
-      'refreshToken': instance.refreshToken,
-      'refreshTokenExpireAt': instance.refreshTokenExpireAt,
+      'token_type': instance.tokenType,
+      'access_token': instance.accessToken,
+      'access_token_expires_at': instance.accessTokenExpiresAt,
+      'refresh_token': instance.refreshToken,
+      'refresh_token_expires_at': instance.refreshTokenExpireAt,
     };

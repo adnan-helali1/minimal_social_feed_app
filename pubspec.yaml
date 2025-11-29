@@ -62,6 +62,7 @@ dependencies:
   # for Option, Either, State, etc functional programming types
   dartz: ^0.10.1
   bloc: ^8.1.4
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

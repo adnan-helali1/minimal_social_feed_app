@@ -1,5 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:minimal_social_feed_app/core/helpers/constants.dart';
+import 'package:minimal_social_feed_app/core/helpers/shared_pref_helper.dart';
+import 'package:minimal_social_feed_app/core/networking/dio_factory.dart';
 import 'package:minimal_social_feed_app/features/login/data/models/login_request_body.dart';
 import 'package:minimal_social_feed_app/features/login/data/repos/login_repo.dart';
 import 'package:minimal_social_feed_app/features/login/domain/cubit/login_state.dart';
@@ -22,8 +25,12 @@ class LoginCubit extends Cubit<LoginState> {
       );
 
       response.when(
-        success: (data) {
-          emit(LoginState.successed(data));
+        success: (loginResponse) async {
+          await saveUserToken(
+            loginResponse.userData?.tokens?.accessToken ?? '',
+          );
+
+          emit(LoginState.successed(loginResponse));
         },
         failure: (error) {
           emit(LoginState.error(error: error.apiErrorModel.message));
@@ -32,5 +39,10 @@ class LoginCubit extends Cubit<LoginState> {
     } catch (e) {
       emit(const LoginState.error(error: "Exception happenedsss"));
     }
+  }
+
+  Future<void> saveUserToken(String token) async {
+    await SharedPrefHelper.setSecuredString(SharedPrefsKey.userToken, token);
+    DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 }

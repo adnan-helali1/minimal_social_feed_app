@@ -33,10 +33,19 @@ class Users {
 
 @JsonSerializable()
 class Tokens {
+  @JsonKey(name: 'token_type')
   String? tokenType;
+
+  @JsonKey(name: 'access_token')
   String? accessToken;
+
+  @JsonKey(name: 'access_token_expires_at')
   String? accessTokenExpiresAt;
+
+  @JsonKey(name: 'refresh_token')
   String? refreshToken;
+
+  @JsonKey(name: 'refresh_token_expires_at')
   String? refreshTokenExpireAt;
 
   Tokens({
@@ -46,5 +55,6 @@ class Tokens {
     this.refreshToken,
     this.refreshTokenExpireAt,
   });
+
   factory Tokens.fromJson(Map<String, dynamic> json) => _$TokensFromJson(json);
 }
