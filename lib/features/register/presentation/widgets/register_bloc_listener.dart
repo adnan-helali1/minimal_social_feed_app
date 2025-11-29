@@ -4,8 +4,8 @@ import 'package:minimal_social_feed_app/core/helpers/extensions.dart';
 import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
-import 'package:minimal_social_feed_app/features/register/domain/cubit/register_cubit.dart';
-import 'package:minimal_social_feed_app/features/register/domain/cubit/register_state.dart';
+import 'package:minimal_social_feed_app/features/register/logic/register_cubit.dart';
+import 'package:minimal_social_feed_app/features/register/logic/register_state.dart';
 
 class RegisterBlocListener extends StatelessWidget {
   const RegisterBlocListener({super.key});

@@ -8,8 +8,8 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasMedia = post.media != null && post.media!.isNotEmpty;
-    final firstMedia = hasMedia ? post.media!.first : null;
+    final hasMedia = post.media.isNotEmpty;
+    final firstMedia = hasMedia ? post.media.first : null;
     final isImage = hasMedia && firstMedia!.mediaType == "image";
     final isVideo = hasMedia && firstMedia!.mediaType == "video";
 
@@ -23,9 +23,24 @@ class PostCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// USER NAME
-            Text(
-              post.user?.name ?? 'Unknown User',
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  post.user.name,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.access_time, size: 14),
+                    SizedBox(width: 4),
+                    Text(post.timeAgo),
+                  ],
+                ),
+              ],
             ),
 
             const SizedBox(height: 8),

@@ -5,7 +5,7 @@ import 'package:minimal_social_feed_app/core/helpers/shared_pref_helper.dart';
 import 'package:minimal_social_feed_app/core/networking/dio_factory.dart';
 import 'package:minimal_social_feed_app/features/login/data/models/login_request_body.dart';
 import 'package:minimal_social_feed_app/features/login/data/repos/login_repo.dart';
-import 'package:minimal_social_feed_app/features/login/domain/cubit/login_state.dart';
+import 'package:minimal_social_feed_app/features/login/logic/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;

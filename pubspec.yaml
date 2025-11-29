@@ -59,10 +59,12 @@ dependencies:
   permission_handler: ^12.0.1
   # use the native file explorer to pick single or multiple files
   file_picker: ^10.3.7 
-  # for Option, Either, State, etc functional programming types
-  dartz: ^0.10.1
+  #state mangment
   bloc: ^8.1.4
+  #local sorage
   shared_preferences: ^2.5.3
+  #for timing
+  timeago: ^3.5.0
 
 dev_dependencies:
   flutter_test:

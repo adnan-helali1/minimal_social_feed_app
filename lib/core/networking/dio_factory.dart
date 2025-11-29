@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:dio/dio.dart';
 import 'package:minimal_social_feed_app/core/helpers/constants.dart';
 import 'package:minimal_social_feed_app/core/helpers/shared_pref_helper.dart';

@@ -1,3 +1,5 @@
+import 'package:timeago/timeago.dart' as timeago;
+
 class FeedResponseModel {
   final bool status;
   final String message;
@@ -22,6 +24,11 @@ class FeedResponseModel {
   }
 }
 
+String formatTimeAgo(String dateString) {
+  final date = DateTime.parse(dateString).toLocal();
+  return timeago.format(date, locale: 'ar');
+}
+
 class Post {
   final int id;
   final String title;
@@ -40,6 +47,9 @@ class Post {
     required this.createdAt,
     required this.updatedAt,
   });
+
+  /// 🔥 Getter جاهز للاستخدام في الواجهة
+  String get timeAgo => formatTimeAgo(createdAt);
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
