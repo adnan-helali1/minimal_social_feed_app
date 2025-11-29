@@ -1,15 +1,15 @@
 import 'package:minimal_social_feed_app/core/networking/api_error_handler.dart';
 import 'package:minimal_social_feed_app/core/networking/api_result.dart';
 import 'package:minimal_social_feed_app/core/networking/api_service.dart';
-import 'package:minimal_social_feed_app/features/register/data/models/register_response.dart';
+import 'package:minimal_social_feed_app/features/feed/data/models/feed_response_model.dart';
 
-class RegisterRepo {
+class FeedRepo {
   final ApiService _apiService;
 
-  RegisterRepo(this._apiService);
-  Future<ApiResult<RegisterResponse>> register(registerRequestBody) async {
+  FeedRepo(this._apiService);
+  Future<ApiResult<FeedResponseModel>> feedRepo() async {
     try {
-      final response = await _apiService.register(registerRequestBody);
+      final response = await _apiService.getPosts();
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

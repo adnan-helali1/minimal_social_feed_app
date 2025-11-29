@@ -16,7 +16,7 @@ class SocialApp extends StatelessWidget {
 
       child: MaterialApp(
         onGenerateRoute: AppRouter().generateRoute,
-        initialRoute: Routes.logInScreen,
+        initialRoute: Routes.homeScreen,
         debugShowCheckedModeBanner: false,
         title: 'socialmedia App',
         theme: ThemeData(primaryColor: ColorsManegar.mainBlue),
