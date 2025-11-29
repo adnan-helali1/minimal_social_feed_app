@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimal_social_feed_app/core/routing/app_router.dart';
 import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
+import 'package:minimal_social_feed_app/main.dart';
 
 class SocialApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -16,7 +17,7 @@ class SocialApp extends StatelessWidget {
 
       child: MaterialApp(
         onGenerateRoute: AppRouter().generateRoute,
-        initialRoute: Routes.homeScreen,
+        initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.logInScreen,
         debugShowCheckedModeBanner: false,
         title: 'socialmedia App',
         theme: ThemeData(primaryColor: ColorsManegar.mainBlue),
