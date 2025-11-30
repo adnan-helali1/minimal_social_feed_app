@@ -5,6 +5,7 @@ import 'package:minimal_social_feed_app/core/networking/dio_factory.dart';
 import 'package:minimal_social_feed_app/features/feed/data/repos/feed_repo.dart';
 import 'package:minimal_social_feed_app/features/login/data/repos/login_repo.dart';
 import 'package:minimal_social_feed_app/features/register/data/repos/register_repo.dart';
+import 'package:minimal_social_feed_app/features/single_post/data/repos/single_post_repo.dart';
 
 final getit = GetIt.instance;
 Future<void> setupGetit() async {
@@ -19,4 +20,5 @@ Future<void> setupGetit() async {
   getit.registerLazySingleton<RegisterRepo>(() => RegisterRepo(getit()));
   // getit.registerFactory<RegisterCubit>(() => RegisterCubit(getit()));
   getit.registerLazySingleton<FeedRepo>(() => FeedRepo(getit()));
+  getit.registerLazySingleton<SinglePostRepo>(() => SinglePostRepo(getit()));
 }
