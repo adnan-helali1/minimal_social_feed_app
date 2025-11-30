@@ -1,7 +1,9 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:minimal_social_feed_app/features/feed/presentation/widgets/pdf_view_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:minimal_social_feed_app/core/helpers/spacing.dart';
+import 'package:minimal_social_feed_app/core/theme/colors.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/screens/pdf_view_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import '../../data/models/feed_model.dart';
 
@@ -44,24 +46,22 @@ class _DocumentWidgetState extends State<DocumentWidget> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.grey.shade100,
+        color: ColorsManegar.greyShade100,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.shade300),
+        border: Border.all(color: ColorsManegar.greyShade300),
       ),
       child: Row(
         children: [
           const Icon(Icons.insert_drive_file, size: 30),
-          const SizedBox(width: 10),
-
+          horizontalSpace(10),
           Expanded(
             child: Text(fileName, maxLines: 1, overflow: TextOverflow.ellipsis),
           ),
-
-          // تحميل الملف
+          //Downloading the file
           isDownloading
               ? SizedBox(
-                height: 24,
-                width: 24,
+                height: 24.h,
+                width: 24.w,
                 child: CircularProgressIndicator(value: progress),
               )
               : IconButton(
@@ -70,18 +70,17 @@ class _DocumentWidgetState extends State<DocumentWidget> {
                   final path = await downloadFile(widget.media.url!, fileName);
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("تم التحميل في: $path")),
+                    SnackBar(content: Text("Downloaded On $path")),
                   );
                 },
               ),
 
-          // زر فتح PDF فقط
+          //Open As PDF
           if (fileName.toLowerCase().endsWith(".pdf"))
             IconButton(
               icon: const Icon(Icons.open_in_new),
               onPressed: () async {
                 final path = await downloadFile(widget.media.url!, fileName);
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
@@ -10,7 +9,7 @@ class PdfViewerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("عرض PDF")),
+      appBar: AppBar(title: const Text(" PDF View")),
       body: PDFView(filePath: filePath),
     );
   }
