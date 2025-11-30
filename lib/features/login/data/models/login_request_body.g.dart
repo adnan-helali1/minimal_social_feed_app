@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: unused_element
-
 part of 'login_request_body.dart';
 
 // **************************************************************************
@@ -15,4 +13,7 @@ LoginRequestBody _$LoginRequestBodyFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$LoginRequestBodyToJson(LoginRequestBody instance) =>
-    <String, dynamic>{'email': instance.email, 'password': instance.password};
+    <String, dynamic>{
+      'email': instance.email,
+      'password': instance.password,
+    };

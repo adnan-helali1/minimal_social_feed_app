@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minimal_social_feed_app/features/feed/logic/feed_cubit.dart';
 import 'package:minimal_social_feed_app/features/feed/logic/feed_state.dart';
-import 'package:minimal_social_feed_app/features/feed/presentation/widgets/huo_feed_card.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/widgets/feed_card.dart';
 
 class BlocBuilderFeed extends StatelessWidget {
   final ScrollController scrollController;

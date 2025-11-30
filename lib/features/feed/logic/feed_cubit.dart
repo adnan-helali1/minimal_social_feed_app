@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimal_social_feed_app/features/feed/data/models/feed_response_model.dart';
+import 'package:minimal_social_feed_app/features/feed/data/models/feed_model.dart';
 import 'package:minimal_social_feed_app/features/feed/data/repos/feed_repo.dart';
 import 'package:minimal_social_feed_app/features/feed/logic/feed_state.dart';
 
@@ -21,9 +21,9 @@ class FeedCubit extends Cubit<FeedState> {
 
     response.when(
       success: (feedResponse) {
-        allPosts = feedResponse.posts;
-        currentPage = feedResponse.pagination.currentPage;
-        lastPage = feedResponse.pagination.lastPage;
+        allPosts = feedResponse.data?.posts ?? [];
+        currentPage = feedResponse.data?.pagination?.currentPage ?? 1;
+        lastPage = feedResponse.data?.pagination?.lastPage ?? 1;
 
         emit(
           FeedState.feedSuccess(
@@ -61,8 +61,8 @@ class FeedCubit extends Cubit<FeedState> {
 
     response.when(
       success: (feedResponse) {
-        allPosts.addAll(feedResponse.posts);
-        lastPage = feedResponse.pagination.lastPage;
+        allPosts.addAll(feedResponse.data?.posts ?? []);
+        lastPage = feedResponse.data?.pagination?.lastPage ?? lastPage;
         isLoadingMore = false;
 
         emit(

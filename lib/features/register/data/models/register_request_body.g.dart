@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: unused_element
-
 part of 'register_request_body.dart';
 
 // **************************************************************************
@@ -16,9 +14,9 @@ RegisterRequestBody _$RegisterRequestBodyFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$RegisterRequestBodyToJson(
-  RegisterRequestBody instance,
-) => <String, dynamic>{
-  'email': instance.email,
-  'password': instance.password,
-  'name': instance.username,
-};
+        RegisterRequestBody instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'password': instance.password,
+      'name': instance.username,
+    };

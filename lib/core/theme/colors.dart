@@ -6,4 +6,5 @@ class ColorsManegar {
   static const Color mainBlue = Colors.blueAccent;
   static const Color blueGrey = Colors.blueGrey;
   static const Color red = Colors.red;
+  static const Color black12 = Colors.black12;
 }

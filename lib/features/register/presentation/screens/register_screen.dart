@@ -40,7 +40,11 @@ class RegisterScreen extends StatelessWidget {
               ),
               //Already have an account
               verticalSpace(20.h),
-              TextFooter(nextPageName: Routes.logInScreen, textSpan: 'Login'),
+              TextFooter(
+                nextPageName: Routes.logInScreen,
+                textSpan: 'Login',
+                firstWord: 'Already',
+              ),
               RegisterBlocListener(),
             ],
           ),

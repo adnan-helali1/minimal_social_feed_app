@@ -18,6 +18,11 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: ColorsManegar.black,
   );
+  static TextStyle font15BlackBold = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.bold,
+    color: ColorsManegar.black,
+  );
   static TextStyle font18Black600 = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,

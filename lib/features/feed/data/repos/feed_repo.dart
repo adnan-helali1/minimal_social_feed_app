@@ -1,7 +1,7 @@
 import 'package:minimal_social_feed_app/core/networking/api_error_handler.dart';
 import 'package:minimal_social_feed_app/core/networking/api_result.dart';
 import 'package:minimal_social_feed_app/core/networking/api_service.dart';
-import 'package:minimal_social_feed_app/features/feed/data/models/feed_response_model.dart';
+import 'package:minimal_social_feed_app/features/feed/data/models/feed_response_model1.dart';
 
 class FeedRepo {
   final ApiService _apiService;
