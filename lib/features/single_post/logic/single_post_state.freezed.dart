@@ -12,7 +12,8 @@ part of 'single_post_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SinglePostState {
@@ -22,16 +23,14 @@ mixin _$SinglePostState {
     required TResult Function() singlePostloading,
     required TResult Function(SingleDataWrapper posts) singlePostSuccess,
     required TResult Function(ErrorHandler errorHandler) singlePosterror,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? singlePostloading,
     TResult? Function(SingleDataWrapper posts)? singlePostSuccess,
     TResult? Function(ErrorHandler errorHandler)? singlePosterror,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -39,24 +38,21 @@ mixin _$SinglePostState {
     TResult Function(SingleDataWrapper posts)? singlePostSuccess,
     TResult Function(ErrorHandler errorHandler)? singlePosterror,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SinglePostloading value) singlePostloading,
     required TResult Function(_SinglePostSuccess value) singlePostSuccess,
     required TResult Function(_SinglePostError value) singlePosterror,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_SinglePostloading value)? singlePostloading,
     TResult? Function(_SinglePostSuccess value)? singlePostSuccess,
     TResult? Function(_SinglePostError value)? singlePosterror,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -64,15 +60,15 @@ mixin _$SinglePostState {
     TResult Function(_SinglePostSuccess value)? singlePostSuccess,
     TResult Function(_SinglePostError value)? singlePosterror,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SinglePostStateCopyWith<$Res> {
   factory $SinglePostStateCopyWith(
-          SinglePostState value, $Res Function(SinglePostState) then) =
-      _$SinglePostStateCopyWithImpl<$Res, SinglePostState>;
+    SinglePostState value,
+    $Res Function(SinglePostState) then,
+  ) = _$SinglePostStateCopyWithImpl<$Res, SinglePostState>;
 }
 
 /// @nodoc
@@ -92,8 +88,9 @@ class _$SinglePostStateCopyWithImpl<$Res, $Val extends SinglePostState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+    _$InitialImpl value,
+    $Res Function(_$InitialImpl) then,
+  ) = __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -101,8 +98,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$SinglePostStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+    _$InitialImpl _value,
+    $Res Function(_$InitialImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SinglePostState
   /// with the given fields replaced by the non-null parameter values.
@@ -208,18 +206,20 @@ abstract class _Initial implements SinglePostState {
 
 /// @nodoc
 abstract class _$$SinglePostloadingImplCopyWith<$Res> {
-  factory _$$SinglePostloadingImplCopyWith(_$SinglePostloadingImpl value,
-          $Res Function(_$SinglePostloadingImpl) then) =
-      __$$SinglePostloadingImplCopyWithImpl<$Res>;
+  factory _$$SinglePostloadingImplCopyWith(
+    _$SinglePostloadingImpl value,
+    $Res Function(_$SinglePostloadingImpl) then,
+  ) = __$$SinglePostloadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SinglePostloadingImplCopyWithImpl<$Res>
     extends _$SinglePostStateCopyWithImpl<$Res, _$SinglePostloadingImpl>
     implements _$$SinglePostloadingImplCopyWith<$Res> {
-  __$$SinglePostloadingImplCopyWithImpl(_$SinglePostloadingImpl _value,
-      $Res Function(_$SinglePostloadingImpl) _then)
-      : super(_value, _then);
+  __$$SinglePostloadingImplCopyWithImpl(
+    _$SinglePostloadingImpl _value,
+    $Res Function(_$SinglePostloadingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SinglePostState
   /// with the given fields replaced by the non-null parameter values.
@@ -325,9 +325,10 @@ abstract class _SinglePostloading implements SinglePostState {
 
 /// @nodoc
 abstract class _$$SinglePostSuccessImplCopyWith<$Res> {
-  factory _$$SinglePostSuccessImplCopyWith(_$SinglePostSuccessImpl value,
-          $Res Function(_$SinglePostSuccessImpl) then) =
-      __$$SinglePostSuccessImplCopyWithImpl<$Res>;
+  factory _$$SinglePostSuccessImplCopyWith(
+    _$SinglePostSuccessImpl value,
+    $Res Function(_$SinglePostSuccessImpl) then,
+  ) = __$$SinglePostSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SingleDataWrapper posts});
 }
@@ -336,23 +337,25 @@ abstract class _$$SinglePostSuccessImplCopyWith<$Res> {
 class __$$SinglePostSuccessImplCopyWithImpl<$Res>
     extends _$SinglePostStateCopyWithImpl<$Res, _$SinglePostSuccessImpl>
     implements _$$SinglePostSuccessImplCopyWith<$Res> {
-  __$$SinglePostSuccessImplCopyWithImpl(_$SinglePostSuccessImpl _value,
-      $Res Function(_$SinglePostSuccessImpl) _then)
-      : super(_value, _then);
+  __$$SinglePostSuccessImplCopyWithImpl(
+    _$SinglePostSuccessImpl _value,
+    $Res Function(_$SinglePostSuccessImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SinglePostState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? posts = null,
-  }) {
-    return _then(_$SinglePostSuccessImpl(
-      posts: null == posts
-          ? _value.posts
-          : posts // ignore: cast_nullable_to_non_nullable
-              as SingleDataWrapper,
-    ));
+  $Res call({Object? posts = null}) {
+    return _then(
+      _$SinglePostSuccessImpl(
+        posts:
+            null == posts
+                ? _value.posts
+                : posts // ignore: cast_nullable_to_non_nullable
+                    as SingleDataWrapper,
+      ),
+    );
   }
 }
 
@@ -387,7 +390,9 @@ class _$SinglePostSuccessImpl implements _SinglePostSuccess {
   @pragma('vm:prefer-inline')
   _$$SinglePostSuccessImplCopyWith<_$SinglePostSuccessImpl> get copyWith =>
       __$$SinglePostSuccessImplCopyWithImpl<_$SinglePostSuccessImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -479,9 +484,10 @@ abstract class _SinglePostSuccess implements SinglePostState {
 
 /// @nodoc
 abstract class _$$SinglePostErrorImplCopyWith<$Res> {
-  factory _$$SinglePostErrorImplCopyWith(_$SinglePostErrorImpl value,
-          $Res Function(_$SinglePostErrorImpl) then) =
-      __$$SinglePostErrorImplCopyWithImpl<$Res>;
+  factory _$$SinglePostErrorImplCopyWith(
+    _$SinglePostErrorImpl value,
+    $Res Function(_$SinglePostErrorImpl) then,
+  ) = __$$SinglePostErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ErrorHandler errorHandler});
 }
@@ -491,22 +497,23 @@ class __$$SinglePostErrorImplCopyWithImpl<$Res>
     extends _$SinglePostStateCopyWithImpl<$Res, _$SinglePostErrorImpl>
     implements _$$SinglePostErrorImplCopyWith<$Res> {
   __$$SinglePostErrorImplCopyWithImpl(
-      _$SinglePostErrorImpl _value, $Res Function(_$SinglePostErrorImpl) _then)
-      : super(_value, _then);
+    _$SinglePostErrorImpl _value,
+    $Res Function(_$SinglePostErrorImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SinglePostState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? errorHandler = null,
-  }) {
-    return _then(_$SinglePostErrorImpl(
-      null == errorHandler
-          ? _value.errorHandler
-          : errorHandler // ignore: cast_nullable_to_non_nullable
-              as ErrorHandler,
-    ));
+  $Res call({Object? errorHandler = null}) {
+    return _then(
+      _$SinglePostErrorImpl(
+        null == errorHandler
+            ? _value.errorHandler
+            : errorHandler // ignore: cast_nullable_to_non_nullable
+                as ErrorHandler,
+      ),
+    );
   }
 }
 
@@ -542,7 +549,9 @@ class _$SinglePostErrorImpl implements _SinglePostError {
   @pragma('vm:prefer-inline')
   _$$SinglePostErrorImplCopyWith<_$SinglePostErrorImpl> get copyWith =>
       __$$SinglePostErrorImplCopyWithImpl<_$SinglePostErrorImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
