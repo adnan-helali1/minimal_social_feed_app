@@ -20,6 +20,10 @@ class PostCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onDoubleTap: () {
+        context.pushNamed(Routes.createpostscreen);
+      },
+
+      onTapUp: (detailes) {
         context.pushNamed(Routes.singlepostscreen, arguments: post.id);
       },
       child: Card(

@@ -33,4 +33,12 @@ abstract class ApiService {
   //========Single Post
   @GET("/posts/{postId}")
   Future<SinglePostResponseModel> getSinglePostId(@Path("postId") int postId);
+
+  @POST("/posts")
+  @MultiPart()
+  Future<FeedResponseModel> createPost(
+    @Part(name: "title") String title,
+    @Part(name: "content") String content,
+    @Part(name: "media[]") List<MultipartFile> media,
+  );
 }
