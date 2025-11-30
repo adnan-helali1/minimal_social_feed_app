@@ -49,6 +49,7 @@ class LoginScreen extends StatelessWidget {
               TextFooter(
                 nextPageName: Routes.registersScreen,
                 textSpan: 'Register',
+                firstWord: 'Dont',
               ),
               LoginBlocListener(),
             ],

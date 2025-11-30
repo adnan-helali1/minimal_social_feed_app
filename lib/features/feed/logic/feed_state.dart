@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:minimal_social_feed_app/core/networking/api_error_handler.dart';
-import 'package:minimal_social_feed_app/features/feed/data/models/feed_response_model.dart';
+import 'package:minimal_social_feed_app/features/feed/data/models/feed_model.dart';
 part 'feed_state.freezed.dart';
 
 @freezed

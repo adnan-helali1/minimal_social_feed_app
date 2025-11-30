@@ -3,6 +3,7 @@ import 'package:minimal_social_feed_app/core/di/dependency_injection.dart';
 import 'package:minimal_social_feed_app/core/routing/routes.dart';
 import 'package:minimal_social_feed_app/features/feed/logic/feed_cubit.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/screens/home_screen.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/screens/pdf_view_screen.dart';
 import 'package:minimal_social_feed_app/features/login/logic/login_cubit.dart';
 import 'package:minimal_social_feed_app/features/login/presentation/screens/login_screen.dart';
 import 'package:minimal_social_feed_app/features/register/logic/register_cubit.dart';
