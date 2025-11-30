@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimal_social_feed_app/core/helpers/spacing.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/widgets/audio_player.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/widgets/video_player_widget.dart';
 
 import '../../data/models/feed_model.dart';
@@ -94,13 +95,20 @@ class PostCard extends StatelessWidget {
                         case "audio":
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 12),
-                            child: ListTile(
-                              leading: const Icon(Icons.audiotrack),
-                              title: const Text("Audio File"),
-                              trailing: const Icon(Icons.play_arrow),
-                              onTap: () {},
-                            ),
+                            child: AudioPlayerWidget(media: media),
                           );
+
+                        // return Padding(
+                        //   padding: const EdgeInsets.only(bottom: 12),
+                        //   child: ListTile(
+                        //     leading: const Icon(Icons.audiotrack),
+                        //     title: const Text("Audio File"),
+                        //     trailing: const Icon(Icons.play_arrow),
+                        //     onTap: () {
+
+                        //     },
+                        //   ),
+                        // );
 
                         case "document":
                           return Padding(
