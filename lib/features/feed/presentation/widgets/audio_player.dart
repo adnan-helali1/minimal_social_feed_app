@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:minimal_social_feed_app/core/models/posts_response_model.dart';
 import 'package:rxdart/rxdart.dart';
-import '../../data/models/feed_model.dart';
 
 class AudioPlayerWidget extends StatefulWidget {
   final Media media;

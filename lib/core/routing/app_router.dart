@@ -9,6 +9,8 @@ import 'package:minimal_social_feed_app/features/login/presentation/screens/logi
 import 'package:minimal_social_feed_app/features/register/logic/register_cubit.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/screens/register_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:minimal_social_feed_app/features/single_post/logic/cubit/single_post_cubit.dart';
+import 'package:minimal_social_feed_app/features/single_post/presentation/screens/single_post_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -37,7 +39,13 @@ class AppRouter {
                 child: const HomeScreen(),
               ),
         );
+      case Routes.singlepostscreen:
+        // جلب postId اللي بعثناه من FeedCard عند double tap
+        final postId = settings.arguments as int;
 
+        return MaterialPageRoute(
+          builder: (_) => SinglePostScreen(postId: postId),
+        );
       default:
         return null;
     }

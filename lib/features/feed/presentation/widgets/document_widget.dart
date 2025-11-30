@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minimal_social_feed_app/core/helpers/spacing.dart';
+import 'package:minimal_social_feed_app/core/models/posts_response_model.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/screens/pdf_view_screen.dart';
 import 'package:path_provider/path_provider.dart';
-import '../../data/models/feed_model.dart';
 
 class DocumentWidget extends StatefulWidget {
   final Media media;
