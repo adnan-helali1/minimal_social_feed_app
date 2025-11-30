@@ -4,6 +4,7 @@ import 'package:minimal_social_feed_app/core/helpers/spacing.dart';
 import 'package:minimal_social_feed_app/core/theme/colors.dart';
 import 'package:minimal_social_feed_app/core/theme/textstyles.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/widgets/audio_player.dart';
+import 'package:minimal_social_feed_app/features/feed/presentation/widgets/document_widget.dart';
 import 'package:minimal_social_feed_app/features/feed/presentation/widgets/video_player_widget.dart';
 
 import '../../data/models/feed_model.dart';
@@ -98,32 +99,11 @@ class PostCard extends StatelessWidget {
                             child: AudioPlayerWidget(media: media),
                           );
 
-                        // return Padding(
-                        //   padding: const EdgeInsets.only(bottom: 12),
-                        //   child: ListTile(
-                        //     leading: const Icon(Icons.audiotrack),
-                        //     title: const Text("Audio File"),
-                        //     trailing: const Icon(Icons.play_arrow),
-                        //     onTap: () {
-
-                        //     },
-                        //   ),
-                        // );
-
                         case "document":
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 12),
-                            child: ListTile(
-                              leading: const Icon(Icons.insert_drive_file),
-                              title: Text(
-                                (media.filePath ?? "").split('/').last,
-                              ),
-                              subtitle: const Text("Tap To Download"),
-                              trailing: const Icon(Icons.download),
-                              onTap: () {},
-                            ),
+                            child: DocumentWidget(media: media),
                           );
-
                         default:
                           return const SizedBox.shrink();
                       }
