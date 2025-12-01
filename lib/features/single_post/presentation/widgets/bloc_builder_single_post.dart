@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimal_social_feed_app/features/single_post/logic/cubit/single_post_cubit.dart';
-import 'package:minimal_social_feed_app/features/single_post/logic/cubit/single_post_state.dart';
+import 'package:minimal_social_feed_app/features/single_post/logic/single_post_cubit.dart';
+import 'package:minimal_social_feed_app/features/single_post/logic/single_post_state.dart';
 import 'package:minimal_social_feed_app/features/single_post/presentation/widgets/single_post_card.dart';
 
 class BlocBuilderSinglePost extends StatelessWidget {

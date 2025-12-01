@@ -9,7 +9,7 @@ import 'package:minimal_social_feed_app/features/login/presentation/screens/logi
 import 'package:minimal_social_feed_app/features/register/logic/register_cubit.dart';
 import 'package:minimal_social_feed_app/features/register/presentation/screens/register_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:minimal_social_feed_app/features/single_post/logic/cubit/single_post_cubit.dart';
+import 'package:minimal_social_feed_app/features/single_post/logic/single_post_cubit.dart';
 import 'package:minimal_social_feed_app/features/single_post/presentation/screens/single_post_screen.dart';
 
 class AppRouter {
