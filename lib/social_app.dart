@@ -17,7 +17,6 @@ class SocialApp extends StatelessWidget {
 
       child: MaterialApp(
         onGenerateRoute: AppRouter().generateRoute,
-        //  initialRoute: Routes.singlepostscreen,
         initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.logInScreen,
         debugShowCheckedModeBanner: false,
         title: 'socialmedia App',
